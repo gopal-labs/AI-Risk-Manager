@@ -1,0 +1,22 @@
+fastapi==0.111.0
+uvicorn[standard]==0.29.0
+pydantic==2.7.1
+
+# ML / scoring
+scikit-learn==1.4.2
+xgboost==1.7.6
+shap==0.44.1
+pandas==2.2.2
+numpy==1.26.4
+
+# Data generation
+faker==25.2.0
+
+# Graph (F6 stub, used lightly in shared-identifier lookup)
+networkx==3.3
+
+# Utilities
+python-multipart==0.0.9
+
+# Testing
+pytest>=8.0

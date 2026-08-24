@@ -1,0 +1,26 @@
+merchant_id,name,category,onboarding_date,rolling_chargeback_rate,rolling_volume_30d,is_risky_seed
+M1000,Aravali Retail Pvt Ltd,Apparel,2025-03-06,0.0215,2656070,False
+M1001,Koshur Traders,Food & Beverage,2024-06-12,0.0588,4879330,False
+M1002,NimbusPay Merchant,Food & Beverage,2023-11-09,0.0608,506072,False
+M1003,Trishul Electronics,Entertainment,2025-01-29,0.4288,2795194,True
+M1004,Deccan Fresh Mart,Logistics,2024-09-03,0.0604,2514068,False
+M1005,Orbit Mobility,Retail,2026-02-04,0.401,266828,True
+M1006,Vertex Apparel Co.,Retail,2025-12-01,0.0972,1684471,False
+M1007,Sundarban Exports,Apparel,2025-06-05,0.1276,1173201,False
+M1008,Nilgiri Foods,Travel,2024-04-27,0.0715,3201971,False
+M1009,Copper Kettle Café,Healthcare,2025-01-03,0.0591,741774,False
+M1010,Zenith Fintech Services,Apparel,2026-04-16,0.0462,2226087,False
+M1011,Bhairav Hardware,Electronics,2025-04-09,0.0117,3358594,False
+M1012,Malabar Gold Traders,Retail,2025-03-05,0.115,1418914,False
+M1013,Sahyadri Organics,Logistics,2023-12-01,0.0212,2072216,False
+M1014,Vega Mobility,Electronics,2024-01-02,0.0404,2118895,False
+M1015,IndoStar Logistics,Entertainment,2024-01-21,0.38,4079400,True
+M1016,CrestWave Healthcare,Entertainment,2026-06-05,0.2968,872759,True
+M1017,Pratap Jewellers,Apparel,2023-10-01,0.0794,1936055,False
+M1018,Skyline Hospitality,Exports,2025-02-14,0.0893,1354448,False
+M1019,DeltaX Fintech,Electronics,2024-02-18,0.0347,3904816,False
+M1020,Nandini Dairy Co.,Food & Beverage,2026-02-11,0.0108,2342869,False
+M1021,Ravi Exports,Travel,2025-03-19,0.0415,4290240,False
+M1022,Chakra Electronics,Food & Beverage,2026-05-25,0.0251,981714,False
+M1023,SunRise Travels,Travel,2026-04-01,0.5239,1682813,True
+M1024,UrbanNest Furniture,Entertainment,2025-08-24,0.0186,2119866,False

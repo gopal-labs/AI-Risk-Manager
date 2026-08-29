@@ -19,11 +19,11 @@ export default function ReviewQueue() {
     () => getFeed(50), POLL_FEED_MS, [apiOnline]
   );
 
-  const rawFeed = (apiOnline && apiData)
+  const rawFeed = (apiOnline && apiData && Array.isArray(apiData) && apiData.length > 0)
     ? apiData
     : Array.from({ length: 15 }, () => normaliseTx(makeSyntheticTx()));
 
-  const flaggedFeed = rawFeed.filter((t) => t.band !== "safe");
+  const flaggedFeed = rawFeed.filter((t) => t && t.band !== "safe");
 
   const [filterBand, setFilterBand] = useState("all");
   const [sortBy,     setSortBy]     = useState("score_desc");

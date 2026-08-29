@@ -29,16 +29,17 @@ if not (data_dir / "transactions.csv").exists():
 # ── Launch ────────────────────────────────────────────────────────────────
 if __name__ == "__main__":
     import uvicorn
+    port = int(os.getenv("PORT", "8000"))          # Render sets $PORT dynamically
+    is_prod = os.getenv("RENDER") is not None      # Render sets RENDER=true
     print("\n" + "=" * 60)
-    print("  AI Risk Manager — Scoring API")
-    print("  http://localhost:8000")
-    print("  Docs: http://localhost:8000/docs")
+    print(f"  AI Risk Manager — Scoring API  (port {port})")
+    print(f"  Docs: http://0.0.0.0:{port}/docs")
     print("=" * 60 + "\n")
     uvicorn.run(
         "main:app",
         host="0.0.0.0",
-        port=8000,
-        reload=True,
-        reload_dirs=[str(Path(__file__).parent)],
+        port=port,
+        reload=not is_prod,                        # hot-reload off in production
+        reload_dirs=[str(Path(__file__).parent)] if not is_prod else None,
         log_level="info",
     )

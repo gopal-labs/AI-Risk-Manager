@@ -1,0 +1,36 @@
+services:
+  # ── Backend: FastAPI scoring API ──────────────────────────────────────────
+  - type: web
+    name: ai-risk-manager-api
+    runtime: python
+    region: singapore                 # closest to India
+    plan: free
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: python run.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11.0"
+      - key: RENDER
+        value: "true"
+      # After deploy, paste the backend URL here or set in Render dashboard:
+      # - key: FRONTEND_URL
+      #   value: https://your-frontend.onrender.com
+
+  # ── Frontend: Vite / React static site ───────────────────────────────────
+  - type: web
+    name: ai-risk-manager-ui
+    runtime: static
+    region: singapore
+    plan: free
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    envVars:
+      # Set this to your backend URL after the backend service is deployed:
+      - key: VITE_API_URL
+        value: https://ai-risk-manager-api.onrender.com
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html

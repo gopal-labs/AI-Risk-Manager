@@ -191,13 +191,22 @@ export default function RingGraph() {
     return () => obs.disconnect();
   }, []);
 
-  // Load graph data
+  // Load graph data — fall back to synthetic if API returns empty nodes
   useEffect(() => {
+    if (apiOnline === null) {
+      setGraph(makeSyntheticGraph());
+      return;
+    }
     let cancelled = false;
     (async () => {
+      if (!apiOnline) {
+        if (!cancelled) setGraph(makeSyntheticGraph());
+        return;
+      }
       try {
-        const d = apiOnline ? await getRingGraph() : makeSyntheticGraph();
-        if (!cancelled) setGraph(d);
+        const d = await getRingGraph();
+        if (!cancelled)
+          setGraph(d && d.nodes && d.nodes.length > 0 ? d : makeSyntheticGraph());
       } catch {
         if (!cancelled) setGraph(makeSyntheticGraph());
       }

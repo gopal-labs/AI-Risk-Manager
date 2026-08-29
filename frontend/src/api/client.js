@@ -2,7 +2,9 @@
 // api/client.js — AI Risk Manager · Centralized fetch helpers
 // ─────────────────────────────────────────────────────────────────────────────
 
-export const API_BASE = "http://localhost:8000";
+export const API_BASE =
+  import.meta.env.VITE_API_URL ||
+  "http://localhost:8000";
 export const POLL_FEED_MS  = 4000;
 export const POLL_STATS_MS = 5000;
 export const PR_DEBOUNCE   = 350;
